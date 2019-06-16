@@ -10,7 +10,7 @@ v1.0, 2019-06-16
 
 This sample Laravel application is using Jibimo Laravel package available at https://github.com/J-TAG/jibimo-api-laravel-package to show you how to implement this package in your Laravel app.
 
-image:https://img.shields.io/github/release/j-tag/jibimo-api-laravel-package.svg[GitHub release]
+image:https://img.shields.io/github/release/j-tag/jibimo-laravel-sample.svg[GitHub release]
 
 == 🎁 Quick Start
 
