@@ -1,0 +1,81 @@
+= 🏢 Jibimo API Laravel Sample App
+Hesam Gholami <hesamgholami@yahoo.com>
+v1.0, 2019-06-16
+
+++++
+<link rel="stylesheet"  href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.1.0/css/font-awesome.min.css">
+++++
+:icons: font
+:experimental: true
+
+This sample Laravel application is using Jibimo Laravel package available at https://github.com/J-TAG/jibimo-api-laravel-package to show you how to implement this package in your Laravel app.
+
+image:https://img.shields.io/github/release/j-tag/jibimo-api-laravel-package.svg[GitHub release]
+
+== 🎁 Quick Start
+
+This app will use Jibimo Laravel package which is implemented as separate commands in `app/Console/Commands` directory.
+
+Simply install required packages using following composer command:
+
+[source, bash]
+----
+composer install --prefer-stable
+----
+
+And then add Jibimo configs in your `.env` file:
+
+[source, env]
+----
+JIBIMO_BASE_URL="https://jibimo.com/api"
+JIBIMO_API_TOKEN="..." #Your Jibimo API token
+----
+
+Now you can use `Jibimo` static class available at `puresoft\jibimo\laravel` like `puresoft\jibimo\laravel\Jibimo::pay()`
+or simply you can inject it to your method like this:
+
+[source, php]
+----
+    public function myMethod(Jibimo $jibimo)
+    {
+        $response = $jibimo->pay(...);
+        // ...
+    }
+----
+
+Please take a look at commands that are available in `app/Console/Commands` to see examples of using this package.
+
+=== 🎩 Installation in Your Own Laravel App
+
+In order for adding Jibimo Laravel package to your own project you can run the following command in your own project root directory:
+
+[source, bash]
+----
+composer require puresoft/jibimo-api-laravel --prefer-stable
+----
+
+Now you need to publish Jibimo configs using following command:
+
+[source, bash]
+----
+php artisan vendor:publish --provider=puresoft\jibimo\laravel\JibimoServiceProvider
+----
+
+This will create a `jibimo.php` file in your config folder and now you can set environment variables in your `.env` file
+as follow:
+
+[source, env]
+----
+JIBIMO_BASE_URL="https://jibimo.com/api"
+JIBIMO_API_TOKEN="..." #Your Jibimo API token
+----
+
+Please take a look at https://github.com/J-TAG/jibimo-api-laravel-package/blob/master/README.adoc for Jibimo Laravel package documentation.
+
+== 💝 Contributing
+
+If you enjoyed this project, please consider contributing to it and make it better.
+
+And please don’t forget to give a star to this project.
+
+Thank you and happy coding!
